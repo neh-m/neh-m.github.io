@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" width="320" height="220" role="img" aria-label="Figure placeholder">
+  <rect width="320" height="220" rx="10" fill="#ecebf0"/>
+  <g stroke="#cfced7" stroke-width="1">
+    <line x1="44" y1="28" x2="44" y2="186"/>
+    <line x1="44" y1="186" x2="296" y2="186"/>
+    <line x1="44" y1="145" x2="296" y2="145" stroke-dasharray="3 5"/>
+    <line x1="44" y1="104" x2="296" y2="104" stroke-dasharray="3 5"/>
+    <line x1="44" y1="63" x2="296" y2="63" stroke-dasharray="3 5"/>
+  </g>
+  <polyline fill="none" stroke="#4b4b55" stroke-width="2.6" stroke-linejoin="round" points="44,168 90,150 136,118 182,132 228,82 296,58"/>
+  <polyline fill="none" stroke="#9a99a6" stroke-width="2" stroke-dasharray="6 4" points="44,176 90,166 136,150 182,131 228,120 296,100"/>
+  <g fill="#4b4b55"><circle cx="136" cy="118" r="3.2"/><circle cx="228" cy="82" r="3.2"/><circle cx="296" cy="58" r="3.2"/></g>
+</svg>

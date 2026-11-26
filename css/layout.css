@@ -1,0 +1,76 @@
+/* =============================================================
+   layout.css  —  tabbed layout (one section at a time)
+
+   Top to bottom:
+     .lead    the avatar + name (persistent header)
+     .nav     the tab bar (toggles sections; see nav.css)
+     .content the active section only
+
+   Switching a tab shows that section with a short directional slide:
+   moving to a tab further RIGHT in the bar slides the new content in
+   from the right; moving LEFT slides it in from the left. It's a small
+   nudge + fade, not a full-width swipe. No scrolling between sections,
+   so there's no dead space.
+   ============================================================= */
+
+/* ---- The avatar + name ---- */
+.lead {
+  padding: var(--name-top) var(--gutter) 0;
+  text-align: center;
+}
+
+.avatar {
+  display: block;
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  margin: 0 auto 1.6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--line);
+}
+
+.name {
+  margin: 0 0 var(--gap-name-nav) 0;
+  font-family: var(--font-name);
+  font-size: var(--name-size);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Sections as tab panels ---- */
+.content {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.section {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding: 1rem var(--gutter) 14vh;
+  text-align: center;
+
+  display: none;         /* only the active tab shows */
+}
+
+.section--about {
+  padding-bottom: 2.5rem;
+}
+
+.section.is-active {
+  display: block;
+}
+
+/* Directional entrance. The class (.from-right / .from-left) is set in main.js
+   based on which way you moved along the tab bar. */
+.section.is-active.from-right { animation: panel-in-right var(--dur) var(--ease); }
+.section.is-active.from-left  { animation: panel-in-left  var(--dur) var(--ease); }
+
+@keyframes panel-in-right {
+  from { opacity: 0; transform: translateX(26px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes panel-in-left {
+  from { opacity: 0; transform: translateX(-26px); }
+  to   { opacity: 1; transform: translateX(0); }
+}

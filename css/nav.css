@@ -1,0 +1,61 @@
+/* =============================================================
+   nav.css  —  the sticky, centered navigation bar
+   ============================================================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+
+  display: flex;
+  flex-wrap: wrap;                      /* wrap instead of overflowing on narrow screens */
+  gap: 1rem 2rem;
+  justify-content: center;              /* links centered */
+  padding: var(--nav-pad) var(--gutter);
+  margin-bottom: var(--gap-nav-body);   /* gap from the tab bar down to the content */
+
+  background: var(--bg);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.nav.is-stuck {
+  border-bottom-color: var(--line);
+}
+
+.nav__link {
+  position: relative;
+  padding: 0.25rem 0;
+  color: var(--muted);
+  font-size: var(--nav-size);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.nav__link:hover {
+  color: var(--fg);
+}
+
+/* Keyboard focus gets a real, visible ring. */
+.nav__link:focus-visible {
+  color: var(--fg);
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+/* Active route — set via aria-current by the scrollspy. */
+.nav__link[aria-current="page"] {
+  color: var(--accent);
+}
+
+.nav__link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: var(--accent);
+}

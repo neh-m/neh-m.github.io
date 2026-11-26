@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" width="320" height="220" role="img" aria-label="Figure placeholder">
+  <rect width="320" height="220" rx="10" fill="#ecebf0"/>
+  <g stroke="#cfced7" stroke-width="1">
+    <line x1="44" y1="28" x2="44" y2="186"/>
+    <line x1="44" y1="186" x2="296" y2="186"/>
+  </g>
+  <g fill="#4b4b55">
+    <circle cx="80" cy="150" r="4"/><circle cx="100" cy="138" r="4"/><circle cx="92" cy="160" r="4"/>
+    <circle cx="118" cy="146" r="4"/><circle cx="108" cy="128" r="4"/><circle cx="130" cy="158" r="4"/>
+  </g>
+  <g fill="#9a99a6">
+    <circle cx="200" cy="90" r="4"/><circle cx="222" cy="78" r="4"/><circle cx="212" cy="104" r="4"/>
+    <circle cx="238" cy="92" r="4"/><circle cx="228" cy="66" r="4"/><circle cx="250" cy="110" r="4"/>
+  </g>
+  <line x1="60" y1="170" x2="268" y2="60" stroke="#b7b6c0" stroke-width="2" stroke-dasharray="6 4"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" width="320" height="220" role="img" aria-label="Figure placeholder">
+  <rect width="320" height="220" rx="10" fill="#ecebf0"/>
+  <g>
+    <rect x="96"  y="36"  width="32" height="32" rx="2" fill="#3f3f49"/>
+    <rect x="132" y="36"  width="32" height="32" rx="2" fill="#b9b8c1"/>
+    <rect x="168" y="36"  width="32" height="32" rx="2" fill="#8d8c97"/>
+    <rect x="204" y="36"  width="32" height="32" rx="2" fill="#d2d1d8"/>
+    <rect x="96"  y="72"  width="32" height="32" rx="2" fill="#aeadb7"/>
+    <rect x="132" y="72"  width="32" height="32" rx="2" fill="#4a4a54"/>
+    <rect x="168" y="72"  width="32" height="32" rx="2" fill="#c7c6cd"/>
+    <rect x="204" y="72"  width="32" height="32" rx="2" fill="#9a99a4"/>
+    <rect x="96"  y="108" width="32" height="32" rx="2" fill="#c7c6cd"/>
+    <rect x="132" y="108" width="32" height="32" rx="2" fill="#a2a1ab"/>
+    <rect x="168" y="108" width="32" height="32" rx="2" fill="#44444e"/>
+    <rect x="204" y="108" width="32" height="32" rx="2" fill="#bdbcc5"/>
+    <rect x="96"  y="144" width="32" height="32" rx="2" fill="#d6d5db"/>
+    <rect x="132" y="144" width="32" height="32" rx="2" fill="#b1b0ba"/>
+    <rect x="168" y="144" width="32" height="32" rx="2" fill="#9796a1"/>
+    <rect x="204" y="144" width="32" height="32" rx="2" fill="#4f4f59"/>
+  </g>
+</svg>

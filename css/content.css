@@ -1,0 +1,156 @@
+/* =============================================================
+   content.css  —  section content and research/blog items
+   ============================================================= */
+
+.section p { margin: 0 0 1.1rem 0; }
+.section > :last-child { margin-bottom: 0; }
+
+.muted { color: var(--muted); }
+
+/* ---- Section title (research / blog; about has none) ---- */
+.section__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 2.75rem;
+}
+
+.section__title {
+  margin: 0;
+  font-family: var(--font-name);
+  font-weight: 400;
+  font-size: var(--section-title-size);
+  letter-spacing: 0.01em;
+}
+
+.section__subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* Short accent rule under the title — signals the start of a section. */
+.section__head::after {
+  content: "";
+  width: 2.2rem;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.55;
+}
+
+/* ---- Two-column entries (publications & projects) ---- */
+.entry {
+  width: 100%;
+  display: grid;
+  gap: 1.6rem;
+  align-items: center;
+  text-align: left;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--line);
+}
+.entry:first-of-type { border-top: none; }
+
+/* Publications: figure on the left, details on the right. */
+.entry--media { grid-template-columns: var(--entry-media-w) 1fr; }
+.entry__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+
+/* Projects: hackathon label on the left, details on the right. */
+.entry--aside { grid-template-columns: var(--entry-aside-w) 1fr; align-items: start; }
+.entry__aside-name {
+  margin: 0;
+  font-family: var(--font-name);
+  font-size: 1.05rem;
+}
+.entry__aside-note {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+/* Highlighted "Winner" against the muted note text. */
+.entry__aside-note .win {
+  color: var(--accent);
+  font-weight: 600;
+}
+.entry__aside-loc {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.entry__title {
+  margin: 0 0 0.45rem 0;
+  font-weight: 400;
+  font-size: 1.12rem;
+  line-height: 1.4;
+}
+.entry__meta {
+  margin: 0 0 0.5rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+.entry__desc { margin: 0; color: var(--muted); font-size: 0.97rem; }
+
+.entry a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Stack to one centered column on narrow screens. */
+@media (max-width: 560px) {
+  .entry--media,
+  .entry--aside {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1rem;
+  }
+  .entry__media img { max-width: 220px; margin: 0 auto; }
+}
+
+/* Trailing "see everything" link under a section's list. */
+.section__link {
+  margin: 2rem 0 0;
+  font-size: 0.95rem;
+}
+.section__link a { color: var(--muted); text-decoration: none; }
+.section__link a:hover,
+.section__link a:focus-visible { color: var(--fg); }
+
+/* ---- Research / blog entries ---- */
+.item {
+  width: 100%;
+  padding: 1.15rem 0;
+  border-top: 1px solid var(--line);
+}
+.item:first-of-type { border-top: none; }
+
+.item__title {
+  margin: 0 0 0.3rem 0;
+  font-weight: 400;
+  font-size: 1.15rem;
+}
+
+.item__meta {
+  margin: 0 0 0.5rem 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.item__desc { margin: 0; }
+
+/* Visible keyboard focus for links inside sections. */
+.item a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}

@@ -1,0 +1,43 @@
+/* =============================================================
+   base.css  —  reset + global element defaults
+   ============================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Hide the page scrollbar (scrolling still works by wheel, trackpad, touch and
+   keyboard). A visible scrollbar would appear only on the longer tabs and
+   shift the centered page sideways when switching tabs. */
+html {
+  min-height: 100%;
+  scrollbar-width: none;          /* Firefox, modern Chrome / Edge */
+}
+html::-webkit-scrollbar {         /* Safari, older Chrome / Edge */
+  display: none;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: var(--leading);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; }
+
+/* Respect users who ask for less motion: no transitions, just instant swaps. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Kill all transitions on first paint (deep-links shouldn't animate in). */
+.preload * {
+  transition: none !important;
+}

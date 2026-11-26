@@ -1,0 +1,91 @@
+/* =============================================================
+   variables.css  —  THE STYLE LIVES HERE
+   Change these tokens and the whole site restyles. Nothing in
+   the other CSS files hard-codes a colour, font, or size.
+   ============================================================= */
+
+:root {
+  /* --- Palette (light) --- */
+  --bg:      #fafafa;
+  --fg:      #1a1a1d;
+  --muted:   #6a6a72;
+  --accent:  #1a1a1d;   /* active nav + underline */
+  --line:    #e4e4e8;   /* hairlines */
+
+  /* --- Elevated surfaces & map (light) --- */
+  --surface:       rgba(250, 250, 250, 0.95);
+  --surface-hover: #f0f0f4;
+  --map-bg:        #f4f3f0;
+  --shadow-card:   0 12px 32px rgba(26, 26, 29, 0.11), 0 2px 6px rgba(26, 26, 29, 0.05);
+  --pin-ring:      0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+
+  /* --- Typography --- */
+  --font-body: Georgia, "Times New Roman", serif;
+  --font-name: var(--font-body);
+  --name-size: clamp(2.2rem, 6vw, 3.4rem);
+  --nav-size:  1.05rem;
+  --leading:   1.65;
+
+  /* --- Layout --- */
+  --measure:      640px;  /* max content width */
+  --gutter:       1.25rem;
+  --name-top:     6vh;    /* top offset of the avatar/name block — small, so the page starts near the top */
+  --inner-top:    9vh;    /* top offset for research/blog content under the pinned nav */
+  --screen-min:   100vh;  /* each section is at least one screenful, so scrolling moves between them */
+  --avatar-size:  200px;  /* the photo above the name */
+
+  /* --- Section titles (research / blog) --- */
+  --section-title-size: clamp(1.5rem, 3.6vw, 1.9rem);
+
+  /* --- Two-column entries --- */
+  --entry-media-w: 150px;   /* width of a publication figure */
+  --entry-aside-w: 34%;     /* width of a project's hackathon-name column */
+
+  /* Gaps that reproduce the old spacing exactly. */
+  --gap-name-nav: 0.6rem; /* name -> nav */
+  --gap-nav-body: 1.65rem;/* nav  -> content */
+  --nav-pad:      0.85rem;/* nav bar vertical padding */
+
+  /* --nav-h is measured in JS (real nav height) and set on :root;
+     this is just a fallback used before that runs. */
+  --nav-h: 3.5rem;
+
+  /* --- Motion --- */
+  --dur:      420ms;
+  --dur-fast: 240ms;
+  --ease:     cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* --- Palette (dark) ---
+   Applied in two cases:
+     1. the viewer picked dark explicitly         -> :root[data-theme="dark"]
+     2. no explicit choice + the OS prefers dark   -> media query, only when
+        data-theme isn't set (so a manual "light" choice always wins).
+   The theme toggle (js/theme.js) sets data-theme and remembers the choice. */
+:root[data-theme="dark"] {
+  --bg:     #0e0e10;
+  --fg:     #e8e8ea;
+  --muted:  #8a8a92;
+  --accent: #e8e8ea;
+  --line:   #262629;
+
+  --surface:       rgba(20, 20, 23, 0.94);
+  --surface-hover: #222227;
+  --map-bg:        #151518;
+  --shadow-card:   0 14px 36px rgba(0, 0, 0, 0.52), 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg:     #0e0e10;
+    --fg:     #e8e8ea;
+    --muted:  #8a8a92;
+    --accent: #e8e8ea;
+    --line:   #262629;
+
+    --surface:       rgba(20, 20, 23, 0.94);
+    --surface-hover: #222227;
+    --map-bg:        #151518;
+    --shadow-card:   0 14px 36px rgba(0, 0, 0, 0.52), 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+}
